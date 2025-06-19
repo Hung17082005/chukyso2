@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lịch sử upload</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+    <h1 class="text-2xl font-bold mb-4">Lịch sử upload</h1>
+    <table class="w-full table-auto border border-gray-300">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border px-4 py-2 text-left">Tên file</th>
+          <th class="border px-4 py-2 text-left">Chữ ký SHA-256</th>
+          <th class="border px-4 py-2 text-left">Thời gian</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in history %}
+        <tr>
+          <td class="border px-4 py-2">{{ item.filename }}</td>
+          <td class="border px-4 py-2 text-xs font-mono break-all">{{ item.signature }}</td>
+          <td class="border px-4 py-2">{{ item.time }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="mt-4">
+      <a href="/" class="text-blue-600 hover:underline">← Trở lại upload</a>
+    </div>
+  </div>
+</body>
+</html>
