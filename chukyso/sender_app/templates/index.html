@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Người Gửi</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📤 Người Gửi</h2>
+    {% if message %}
+      <div class="alert success">{{ message }}</div>
+    {% endif %}
+    <form action="/sign" method="post" enctype="multipart/form-data">
+      <label>🔍 Chọn file để ký:</label>
+      <input type="file" name="file" required>
+      <button type="submit">✅ Ký và lưu</button>
+    </form>
+    {% if filename %}
+    <form action="/send" method="post">
+      <input type="hidden" name="filename" value="{{ filename }}">
+      <button type="submit">📨 Gửi cho người nhận</button>
+    </form>
+    {% endif %}
+  </div>
+</body>
+</html>

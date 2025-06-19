@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Người Nhận</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📥 Người Nhận</h2>
+    {% if result %}
+      <div class="alert {{ 'success' if 'hợp lệ' in result else 'error' }}">{{ result }}</div>
+    {% endif %}
+    <form method="POST" action="/verify">
+      <label>📄 Tên file gốc đã nhận:</label>
+      <input type="text" name="filename" placeholder="vd: file.txt" required>
+      <button type="submit">🔍 Xác minh chữ ký</button>
+    </form>
+  </div>
+</body>
+</html>
