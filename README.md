@@ -45,9 +45,4 @@ Thành phần       Mô tả
 
 ![image](https://github.com/user-attachments/assets/59e73d14-b8b6-4503-9641-d1550e32f8e5)
 
-## 🚀 Cách chạy hệ thống
 
-1. **Cài thư viện**:
-
-```bash
-pip install flask pycryptodome
